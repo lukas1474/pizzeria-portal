@@ -15,7 +15,7 @@
   - `/tables`
     - wybór daty i godziny
     - tabela z listą rezerwacji oraz wydarzeń
-      -każda kolumna = 1 stolik
+      - każda kolumna = 1 stolik
       - każdy wiersz = 30 minut
       - ma przypominać widok tygodnia w kalendarzu Google, gdzie w kolumnach zamiast dni są różne stoliki
       - po kliknięciu rezerwacji lub eventu, przechodzimy na stronę szczegółów
