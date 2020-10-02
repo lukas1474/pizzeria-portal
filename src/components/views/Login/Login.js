@@ -1,15 +1,25 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styles from './Login.module.scss';
 
-const Login = () => (
-  <div className={styles.component}>
-    <h2>Login view</h2>
-  </div>
-);
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
-// Login.propTypes = {
-//   children: PropTypes.node,
-// };
+const Login = () => (
+  <main>
+    <Paper className={styles.component}>
+      <Container className={styles.container}>
+        <TextField id="standard-basic" label="Login" />
+        <TextField className={styles.textPassword} id="standard-basic" label="Password" />
+      </Container>
+      <Container className={styles.container}>
+        <Button variant="contained" color="secondary">
+          Login
+        </Button>
+      </Container>
+    </Paper>
+  </main>
+);
 
 export default Login;

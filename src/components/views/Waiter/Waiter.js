@@ -25,12 +25,12 @@ const renderActions = status => {
       return (
         <>
           <Button>thinking</Button>
-          <Button className={styles.link} component={Link} to={`waiter/order/new`}>new order</Button>
+          <Button className={styles.link} component={Link} to={`waiter/order/new`} color="secondary">new order</Button>
         </>
       );
     case 'thinking':
       return (
-        <Button className={styles.link} component={Link} to={`waiter/order/new`}>new order</Button>
+        <Button className={styles.link} component={Link} to={`waiter/order/new`} color="secondary">new order</Button>
       );
     case 'ordered':
       return (
@@ -76,7 +76,7 @@ const Waiter = ({id}) => (
               </TableCell>
               <TableCell>
                 {row.order && (
-                  <Button className={styles.link} component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                  <Button className={styles.link} component={Link} to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`} color="secondary">
                     {row.order}
                   </Button>
                 )}
