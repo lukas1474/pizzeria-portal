@@ -89,8 +89,6 @@ const Waiter = ({id}) => (
         </TableBody>
       </Table>
     </Paper>
-    <Button className={styles.link} component={Link} to={`waiter/order/${id}`}>Order ID</Button>
-    <Button className={styles.link} component={Link} to={`waiter/order/new`}>New order</Button>
   </main>
 );
 
