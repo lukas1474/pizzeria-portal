@@ -1,0 +1,13 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  padding: $base-size;
+
+}
+
+.container {
+  position: relative;
+  padding: 2vh;
+  text-align: left;
+  color: #444;
+}
