@@ -53,7 +53,7 @@ const renderActions = status => {
   }
 };
 
-const Waiter = ({id}) => (
+const Waiter = () => (
   <main>
     <Paper className={styles.component}>
       <Table>

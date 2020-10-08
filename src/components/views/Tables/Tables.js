@@ -34,15 +34,16 @@ const renderActions = status => {
         <>
           <Button className={styles.link} component={Link} to={`tables/booking/new`} color="secondary">New booking</Button>
           <Button className={styles.link} component={Link} to={`tables/events/new`} color="secondary">New event</Button>
+          <Button className={styles.link} component={Link} to={`waiter/order/new`} color="secondary">new order</Button>
         </>
       );
     case 'reseravtion':
       return (
-        <Button className={styles.link} component={Link} to={`tables/booking/id`} color="primary">Reservation</Button>
+        <Button className={styles.link} component={Link} to={`tables/booking/:id`} color="primary">Reservation</Button>
       );
     case 'event':
       return (
-        <Button className={styles.link} component={Link} to={`tables/events/id`} color="primary">Event</Button>
+        <Button className={styles.link} component={Link} to={`tables/events/:id`} color="primary">Event</Button>
       );
     default:
       return null;
