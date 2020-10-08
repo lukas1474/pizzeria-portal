@@ -7,7 +7,6 @@ import TreeItem from '@material-ui/lab/TreeItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-
 const TablesBookingNew = () => (
   <main>
     <Paper className={styles.component}>

@@ -19,57 +19,59 @@ const demoContent = [
 const TablesEvents = () => (
   <main>
     <Paper className={styles.component}>
-      <div className={styles.component}>
+      <div>
         <h2>Event information/:id</h2>
       </div>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Table</TableCell>
-            <TableCell>People</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Time</TableCell>
-            <TableCell>Specification</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {demoContent.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>
-                {row.id && (
-                  <Button color="secondary">
-                    {row.id}
-                  </Button>
-                )}
-              </TableCell>
-              <TableCell component="th" scope="row">
-                {row.table}
-              </TableCell>
-              <TableCell>
-                {row.people}
-              </TableCell>
-              <TableCell>
-                {row.status}
-              </TableCell>
-              <TableCell>
-                {row.date}
-              </TableCell>
-              <TableCell>
-                {row.time}
-              </TableCell>
-              <TableCell>
-                {row.specification}
-              </TableCell>
+      <Container className={styles.container}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>ID</TableCell>
+              <TableCell>Table</TableCell>
+              <TableCell>People</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>Date</TableCell>
+              <TableCell>Time</TableCell>
+              <TableCell>Specification</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div className={styles.component}>
+          </TableHead>
+          <TableBody>
+            {demoContent.map(row => (
+              <TableRow key={row.id}>
+                <TableCell>
+                  {row.id && (
+                    <Button color="secondary">
+                      {row.id}
+                    </Button>
+                  )}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {row.table}
+                </TableCell>
+                <TableCell>
+                  {row.people}
+                </TableCell>
+                <TableCell>
+                  {row.status}
+                </TableCell>
+                <TableCell>
+                  {row.date}
+                </TableCell>
+                <TableCell>
+                  {row.time}
+                </TableCell>
+                <TableCell>
+                  {row.specification}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Container>
+      <div>
         <h2>Change event /:id</h2>
       </div>
-      <form className={styles.component} noValidate>
+      <form className={styles.component} noValidate align="center">
         <TextField
           id="datetime-local"
           label="Time start"
@@ -89,7 +91,7 @@ const TablesEvents = () => (
           }}
         />
       </form>
-      <Container className={styles.component}>
+      <Container className={styles.container}>
         <TreeView>
           <TreeItem nodeId="1" label="Table">
             <TreeItem nodeId="2" label="1" />
@@ -98,7 +100,7 @@ const TablesEvents = () => (
           </TreeItem>
         </TreeView>
       </Container>
-      <Container className={styles.component}>
+      <Container className={styles.container}>
         <TreeView>
           <TreeItem nodeId="1" label="People">
             <TreeItem nodeId="2" label="1" />
@@ -115,7 +117,7 @@ const TablesEvents = () => (
           </TreeItem>
         </TreeView>
       </Container>
-      <Container className={styles.component}>
+      <Container className={styles.container} >
         <TextField
           id="outlined-multiline-static"
           label="Event specification"
@@ -125,8 +127,8 @@ const TablesEvents = () => (
           variant="outlined"
         />
       </Container>
-      <Container className={styles.component}>
-        <Button variant="contained" color="secondary">
+      <Container className={styles.component} align="center">
+        <Button variant="contained" color="secondary" >
           Edit Event
         </Button>
       </Container>

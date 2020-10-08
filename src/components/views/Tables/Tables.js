@@ -11,6 +11,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 const demoContent = [
   { id: 1, hour: '18:00', table1: 'free', table2: 'event', table3: `reseravtion` },
@@ -34,7 +35,6 @@ const renderActions = status => {
         <>
           <Button className={styles.link} component={Link} to={`tables/booking/new`} color="secondary">New booking</Button>
           <Button className={styles.link} component={Link} to={`tables/events/new`} color="secondary">New event</Button>
-          <Button className={styles.link} component={Link} to={`waiter/order/new`} color="secondary">new order</Button>
         </>
       );
     case 'reseravtion':
@@ -52,58 +52,58 @@ const renderActions = status => {
 
 const Tables = ({ id }) => (
   <main>
-    <Paper>
-      <form className={styles.container} noValidate>
-        <TextField
-          id="datetime-local"
-          label="Next appointment"
-          type="datetime-local"
-          defaultValue="2020-10-07T12:30"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-      </form>
-      <div className={styles.component}>
+    <Paper className={styles.component}>
+      <Container className={styles.container}>
+        <form className={styles.component} noValidate align="center">
+          <TextField
+            id="datetime-local"
+            label="Next appointment"
+            type="datetime-local"
+            defaultValue="2020-10-07T12:30"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </form>
+      </Container>
+      {/*<div className={styles.component}>
         <h2>Table view</h2>
         <Link to={`tables/booking/new`} className={styles.link}>Booking new</Link>
         <Link to={`tables/booking/:id`} className={styles.link}>Booking ID</Link>
         <Link to={`tables/events/new`} className={styles.link}>Events new</Link>
         <Link to={`tables/events/:id`} className={styles.link}>Events ID</Link>
-      </div>
+        </div>*/}
       <Grid item xs={12}>
-        <Paper className={styles.paper}>
-          <Paper className={styles.component}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Hour</TableCell>
-                  <TableCell>Table 1</TableCell>
-                  <TableCell>Table 2</TableCell>
-                  <TableCell>Table 3</TableCell>
+        <Container className={styles.container}>
+          <Table className={styles.component}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Hour</TableCell>
+                <TableCell>Table 1</TableCell>
+                <TableCell>Table 2</TableCell>
+                <TableCell>Table 3</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {demoContent.map(row => (
+                <TableRow key={row.id}>
+                  <TableCell component="th" scope="row">
+                    {row.hour}
+                  </TableCell>
+                  <TableCell>
+                    {renderActions(row.table1)}
+                  </TableCell>
+                  <TableCell>
+                    {renderActions(row.table2)}
+                  </TableCell>
+                  <TableCell>
+                    {renderActions(row.table3)}
+                  </TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {demoContent.map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
-                      {row.hour}
-                    </TableCell>
-                    <TableCell>
-                      {renderActions(row.table1)}
-                    </TableCell>
-                    <TableCell>
-                      {renderActions(row.table2)}
-                    </TableCell>
-                    <TableCell>
-                      {renderActions(row.table3)}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Paper>
-        </Paper>
+              ))}
+            </TableBody>
+          </Table>
+        </Container>
       </Grid>
     </Paper>
   </main>

@@ -65,7 +65,7 @@ const TablesBooking = () => (
       <div className={styles.component}>
         <h2>Change booking/:id</h2>
       </div>
-      <form className={styles.component} noValidate>
+      <form className={styles.component} noValidate align="center">
         <TextField
           id="datetime-local"
           label="Time start"
@@ -85,7 +85,7 @@ const TablesBooking = () => (
           }}
         />
       </form>
-      <Container className={styles.component}>
+      <Container className={styles.container} >
         <TreeView>
           <TreeItem nodeId="1" label="Table">
             <TreeItem nodeId="2" label="1" />
@@ -94,7 +94,7 @@ const TablesBooking = () => (
           </TreeItem>
         </TreeView>
       </Container>
-      <Container className={styles.component}>
+      <Container className={styles.container}>
         <TreeView>
           <TreeItem nodeId="1" label="People">
             <TreeItem nodeId="2" label="1" />
@@ -111,7 +111,7 @@ const TablesBooking = () => (
           </TreeItem>
         </TreeView>
       </Container>
-      <Container className={styles.component}>
+      <Container className={styles.container} align="center">
         <Button variant="contained" color="secondary">
           Edit booking
         </Button>
